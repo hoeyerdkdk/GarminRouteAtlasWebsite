@@ -1,1 +1,1 @@
-f4b4a8780eecab168abe135f2953fa60bc4929700112b13f23dafb7df6ddb5af  download/GarminRouteAtlas-build-244.apk
+d8206a9dd93ba6114edf88ef8b937a17399a9d50e01170376d03390415a7ca15  download/GarminRouteAtlas-build-245.apk
