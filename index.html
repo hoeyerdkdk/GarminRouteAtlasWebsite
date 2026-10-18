@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1220">
-  <meta name="description" content="Garmin Route Atlas 2.0: Garmin-ruter, daglige skridt og VO₂max-træningsanalyse. Zoom i løbehistorikken og få forslag fra dine data og forskning.">
+  <meta name="theme-color" content="#073B7A">
+  <meta name="description" content="Garmin Route Atlas 2.0 samler alle dine Garmin-ruter på ét kort. Udforsk, filtrér og genfind aktiviteter, skridt og VO₂max-analyser på Android.">
   <title>Garmin Route Atlas | hoeyer.org</title>
 
   <meta property="og:title" content="Garmin Route Atlas">
-  <meta property="og:description" content="Garmin Route Atlas 2.0: ruter, skridt og interaktiv VO₂max-træningsanalyse til Android.">
+  <meta property="og:description" content="Alle dine Garmin-ruter på ét kort – med filtrering, aktivitetsdetaljer og træningsanalyse til Android.">
+  <meta property="og:image" content="https://app.hoeyer.org/assets/screenshots/overview-map.jpg">
+  <link rel="preload" as="image" href="assets/screenshots/overview-map.jpg" fetchpriority="high">
   <meta property="og:type" content="website">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -21,14 +23,13 @@
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Garmin Route Atlas">
         <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" role="img">
-            <path d="M6 23.5 15.2 8l3.8 6.4L26 10v12.8l-7-4.1-4.3 5.8H6Z"/>
-          </svg>
+          <img src="assets/favicon.svg" alt="" width="44" height="44">
         </span>
         <span>Garmin Route Atlas</span>
       </a>
 
       <nav aria-label="Primær navigation">
+        <a href="#top">Ruteoverblik</a>
         <a href="#features">Funktioner</a>
         <a href="#training">Træningsanalyse</a>
         <a href="#steps">Skridt</a>
@@ -44,22 +45,33 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap hero-grid">
+        <figure class="hero-route">
+          <a class="hero-route-image-link" href="assets/screenshots/overview-map.jpg" target="_blank" rel="noopener"
+            aria-label="Se skærmbilledet af Garmin Route Atlas' ruteoverblik i fuld størrelse">
+            <img class="hero-route-image" src="assets/screenshots/overview-map.jpg"
+              alt="Ægte skærmbillede fra Garmin Route Atlas med 775 aktiviteter på ét interaktivt kort."
+              width="709" height="1536" loading="eager" fetchpriority="high">
+          </a>
+          <figcaption class="hero-route-caption">
+            <strong>Ruteoverblik fra appen</strong>
+            <span>Ægte skærmbillede · tryk for at se hele kortet</span>
+          </figcaption>
+        </figure>
+
         <div class="hero-copy">
-          <p class="eyebrow">Nyhed i version 2.0 · Android</p>
-          <h1>Dine Garmin-data.<br>Fra ruter til indsigt.</h1>
+          <p class="eyebrow">Garmin Route Atlas 2.0 · Android</p>
+          <h1>Alle dine Garmin-ruter.<br>Ét samlet kort.</h1>
           <p class="lead">
-            Garmin Route Atlas samler dine GPS-ruter på ét kort og giver dig overblik over
-            daglige skridt, løbetræning og udviklingen i din Garmin-estimerede VO₂max.
+            Se hele din Garmin-historik på ét kort. Zoom ind på områder, find dine tidligere ruter,
+            filtrér efter aktivitetstype, og vælg en aktivitet for at se dens detaljer.
           </p>
-          <div class="hero-points" aria-label="Nyheder i version 2.0">
-            <span>Træningsanalyse</span><span>Forskningsbaserede forslag</span><span>Zoom i løbehistorikken</span>
+          <div class="hero-points" aria-label="Det vigtigste i appen">
+            <span>Alle ruter samlet</span><span>Kort og satellit</span><span>Filtrering og aktivitetsdetaljer</span>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" id="hero-download" href="download/GarminRouteAtlas.apk" download>
-              Download APK
-            </a>
-            <a class="btn btn-secondary" href="#training">Nyhederne i version 2.0</a>
+            <a class="btn btn-primary" id="hero-download" href="download/GarminRouteAtlas.apk" download>Download APK</a>
+            <a class="btn btn-secondary" href="#screens">Se flere skærmbilleder</a>
           </div>
 
           <div class="release-line" aria-label="Seneste version">
@@ -70,50 +82,9 @@
           </div>
 
           <p class="microcopy">
-            Appen er et uafhængigt projekt og er ikke udviklet eller godkendt af Garmin.
+            Udviklet som et uafhængigt projekt uden tilknytning til Garmin.
+            Træningsanalyse, skridt og VO₂max finder du længere nede på siden.
           </p>
-        </div>
-
-        <div class="hero-visual" aria-label="Illustration af rutekort">
-          <div class="phone">
-            <div class="phone-top"></div>
-            <div class="phone-screen">
-              <svg class="map-art" viewBox="0 0 640 1180" aria-hidden="true">
-                <defs>
-                  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-                    <path d="M48 0H0V48" fill="none" stroke="currentColor" stroke-opacity=".10" stroke-width="2"/>
-                  </pattern>
-                </defs>
-                <rect width="640" height="1180" fill="url(#grid)"/>
-                <path d="M-60 250 C120 140 205 340 350 255 S560 120 720 205" class="road"/>
-                <path d="M-10 670 C130 580 215 775 385 695 S575 520 700 590" class="road"/>
-                <path d="M165 -40 C255 175 150 355 250 510 S420 820 355 1220" class="road"/>
-                <path d="M60 1010 C175 900 205 780 320 800 S500 950 590 820 500 580 360 565 185 680 115 590 130 390 305 355 468 440 520 300" class="route"/>
-                <circle cx="60" cy="1010" r="18" class="start"/>
-                <circle cx="520" cy="300" r="18" class="end"/>
-                <path d="m235 801 24-2-14 20z" class="arrow"/>
-                <path d="m420 896 22 10-19 14z" class="arrow"/>
-                <path d="m195 608 19-12-2 23z" class="arrow"/>
-                <path d="m290 357 23 8-18 16z" class="arrow"/>
-              </svg>
-
-              <div class="map-chip top-left">Løb</div>
-              <div class="map-chip top-right">Kort ▾</div>
-
-              <div class="activity-card">
-                <div>
-                  <span class="activity-label">Tune · 7. sep. 2026</span>
-                  <strong>10,21 km</strong>
-                </div>
-                <div class="activity-stats">
-                  <span><b>52:14</b><small>Tid</small></span>
-                  <span><b>5:07</b><small>Tempo</small></span>
-                  <span><b>74 m</b><small>Højdemeter</small></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="glow"></div>
         </div>
       </div>
     </section>
@@ -275,7 +246,7 @@
     <section class="section" id="screens">
       <div class="wrap">
         <p class="eyebrow">Visning</p>
-        <h2>Enkel navigation mellem kort og aktiviteter</h2>
+        <h2>Ruteoverblikket og resten af appen</h2>
 
         <div class="screen-grid screen-grid-real">
           <figure class="screen-card real-shot">
