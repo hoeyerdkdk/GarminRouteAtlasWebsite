@@ -1,36 +1,53 @@
 # Garmin Route Atlas – officiel hjemmeside
 
-Dette offentlige repository er destinationsrepository for Garmin Route Atlas' statiske produkthjemmeside. Kildekode, versionsoplysninger og den signerede Android APK bygges og verificeres i det private repository `hoeyerdkdk/GarminRouteAtlasReadOnly`.
+Den offentlige hjemmeside til Android-appen Garmin Route Atlas 2.0.
 
-## Klar til GitHub Pages
+- Website: https://app.hoeyer.org
+- Kildekode til hjemmesiden: Dette repository, `main`.
+- Android-kildekode og buildpipeline: det private repository `hoeyerdkdk/GarminRouteAtlasReadOnly`.
+- Distribution af APK: [GitHub Releases](https://github.com/hoeyerdkdk/GarminRouteAtlasWebsite/releases/latest).
 
-Webfilerne til version 2.0.0 er lagt i repositoryets rod:
-- `index.html`, `assets/`, `releases/2.0.html`
-- `CNAME` peger på `app.hoeyer.org`.
-- `.nojekyll` sikrer at statiske filer kopieres uændret.
+## Publicering
 
-**Aktivér Pages**: [Settings → Pages](https://github.com/hoeyerdkdk/GarminRouteAtlasWebsite/settings/pages), vælg `Deploy from a branch`, branch `main` og `/(root)`. Angiv `app.hoeyer.org` under Custom domain og gem. Pages er ikke aktiveret endnu (kontroller status efter opsætning).
+GitHub Pages er konfigureret til at udgive `main` fra repositoryets rod.
+Seneste verificerede Pages-udgivelse med de fem app-skærmbilleder:
+[Pages build and deployment – 18. oktober 2026](https://github.com/hoeyerdkdk/GarminRouteAtlasWebsite/actions/runs/39142661672).
 
-## Automatisk udgivelse af APK og website
+- `index.html`, `assets/` og `releases/2.0.html` er de statiske webfiler.
+- `CNAME` indeholder `app.hoeyer.org`.
+- `.nojekyll` bevarer statiske filnavne uændrede.
 
-Fordi appens kildekode og builds er i et **andet, privat** repository, kan standard-`GITHUB_TOKEN` i dette workflow ikke skrive på tværs af repositories.
+## Skærmbilleder
 
-For at aktivere den allerede implementerede publiceringspipeline:
-1. Opret et **fine-grained personal access token** i GitHub med repositoryadgang **kun** til `hoeyerdkdk/GarminRouteAtlasWebsite` og **Contents: Read and write**.
-2. Gem tokenet under [GarminRouteAtlasReadOnly → Settings → Secrets and variables → Actions](https://github.com/hoeyerdkdk/GarminRouteAtlasReadOnly/settings/secrets/actions) med det præcise navn `WEBSITE_PUBLISH_TOKEN`. Del ikke tokenet i chats eller filer.
-3. Udløs [Publish Garmin Route Atlas website](https://github.com/hoeyerdkdk/GarminRouteAtlasReadOnly/actions/workflows/publish-website.yml) via `Run workflow`.
-4. Kontrollér at steppene Download release, Publish APK og Update public website faktisk er gennemført (ikke markeret skipped).
-5. Fremtidige vellykkede builds på `main` udløser automatisk publicering af nyt webindhold og signeret APK.
+De fem originale JPG-filer fra appen er tilføjet i `assets/screenshots/`:
 
-**Vigtigt:** Den indledende version af `assets/config.js` har bevidst ingen APK-downloadadresse. Første vellykkede publicering erstatter den med det verificerede offentlige APK-link og SHA-256. Downloadknapperne er deaktiverede, indtil publicering er gennemført. Det undgår at vise en falsk download.
+- `overview-map.jpg`
+- `satellite-map.jpg`
+- `selected-activity.jpg`
+- `activity-filter.jpg`
+- `activity-list.jpg`
 
-## Domæne hos one.com
+`index.html` henviser direkte til filerne. Publiceringsworkflowet i appens private repository er konfigureret til at **bevare** `assets/screenshots/` ved `rsync --delete`, så senere app-releases ikke fjerner billederne. Billederne vedligeholdes i dette offentlige repository.
 
-Opret/ret DNS-record for `app.hoeyer.org`:
-- Type: `CNAME`
-- Host/navn: `app`
-- Mål: `hoeyerdkdk.github.io`
+## Automatisk APK- og websiteudgivelse
 
-Fjern eventuelle modstridende A/AAAA/CNAME for netop `app`-subdomænet, men ændr **ikke** `hoeyer.org` eller andre subdomæner. Gennemfør først DNS-skift, når Pages faktisk fungerer, og offentlig APK er verificeret.
+Ved vellykkede Android-builds opretter det private repository et verificeret release-arkiv.
+Workflowet `Publish Garmin Route Atlas website`:
 
-DNS og aktivering af GitHub Pages skal foretages i henholdsvis one.com og GitHubs kontoindstillinger; disse rettigheder findes ikke i den tilknyttede ChatGPT GitHub-app. Kontroller efterfølgende HTTPS og at `https://app.hoeyer.org` viser version 2.0, samt at APK-link og SHA-256 virker.
+1. Kontrollerer APK'ens SHA-256 og versionsmetadata.
+2. Udgiver den signerede APK til offentlige GitHub Releases.
+3. Opdaterer webfiler og `assets/config.js` med versionsnummer, hash og offentlig downloadadresse.
+4. Bevarer de manuelt tilføjede skærmbilleder samt dette README.
+
+Offentligt APK-link: https://github.com/hoeyerdkdk/GarminRouteAtlasWebsite/releases/latest/download/GarminRouteAtlas.apk
+
+## Kontrol
+
+- [GitHub Pages deployments](https://github.com/hoeyerdkdk/GarminRouteAtlasWebsite/actions)
+- [Hjemmesidens billedfiler](https://github.com/hoeyerdkdk/GarminRouteAtlasWebsite/tree/main/assets/screenshots)
+- [Android- og publiceringsworkflows](https://github.com/hoeyerdkdk/GarminRouteAtlasReadOnly/actions)
+
+En vellykket Pages-workflowkørsel viser, at GitHub har gennemført udgivelsen.
+Kontrollér særskilt DNS, HTTPS og visningen på `https://app.hoeyer.org`, hvis domænet ikke kan åbnes udefra.
+
+Officiel GitHub-dokumentation: [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) og [custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
