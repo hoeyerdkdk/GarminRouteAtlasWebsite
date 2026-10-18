@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Garmin Route Atlas 2.0: Garmin-ruter, daglige skridt og VO₂max-træningsanalyse. Zoom i løbehistorikken og få forslag fra dine data og forskning.">
+  <title>Garmin Route Atlas | hoeyer.org</title>
+
+  <meta property="og:title" content="Garmin Route Atlas">
+  <meta property="og:description" content="Garmin Route Atlas 2.0: ruter, skridt og interaktiv VO₂max-træningsanalyse til Android.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Spring til indhold</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Garmin Route Atlas">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img">
+            <path d="M6 23.5 15.2 8l3.8 6.4L26 10v12.8l-7-4.1-4.3 5.8H6Z"/>
+          </svg>
+        </span>
+        <span>Garmin Route Atlas</span>
+      </a>
+
+      <nav aria-label="Primær navigation">
+        <a href="#features">Funktioner</a>
+        <a href="#training">Træningsanalyse</a>
+        <a href="#steps">Skridt</a>
+        <a href="#screens">Visning</a>
+        <a href="#install">Installation</a>
+        <a href="#changelog">Versioner</a>
+      </nav>
+
+      <a class="btn btn-small" href="#download">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Nyhed i version 2.0 · Android</p>
+          <h1>Dine Garmin-data.<br>Fra ruter til indsigt.</h1>
+          <p class="lead">
+            Garmin Route Atlas samler dine GPS-ruter på ét kort og giver dig overblik over
+            daglige skridt, løbetræning og udviklingen i din Garmin-estimerede VO₂max.
+          </p>
+          <div class="hero-points" aria-label="Nyheder i version 2.0">
+            <span>Træningsanalyse</span><span>Forskningsbaserede forslag</span><span>Zoom i løbehistorikken</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="hero-download" href="#download" aria-disabled="true">
+              Download APK
+            </a>
+            <a class="btn btn-secondary" href="#training">Nyhederne i version 2.0</a>
+          </div>
+
+          <div class="release-line" aria-label="Seneste version">
+            <span class="status-dot"></span>
+            <span>Seneste version: <strong data-version>Build</strong></span>
+            <span>·</span>
+            <span data-date>Opdateret</span>
+          </div>
+
+          <p class="microcopy">
+            Appen er et uafhængigt projekt og er ikke udviklet eller godkendt af Garmin.
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="Illustration af rutekort">
+          <div class="phone">
+            <div class="phone-top"></div>
+            <div class="phone-screen">
+              <svg class="map-art" viewBox="0 0 640 1180" aria-hidden="true">
+                <defs>
+                  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+                    <path d="M48 0H0V48" fill="none" stroke="currentColor" stroke-opacity=".10" stroke-width="2"/>
+                  </pattern>
+                </defs>
+                <rect width="640" height="1180" fill="url(#grid)"/>
+                <path d="M-60 250 C120 140 205 340 350 255 S560 120 720 205" class="road"/>
+                <path d="M-10 670 C130 580 215 775 385 695 S575 520 700 590" class="road"/>
+                <path d="M165 -40 C255 175 150 355 250 510 S420 820 355 1220" class="road"/>
+                <path d="M60 1010 C175 900 205 780 320 800 S500 950 590 820 500 580 360 565 185 680 115 590 130 390 305 355 468 440 520 300" class="route"/>
+                <circle cx="60" cy="1010" r="18" class="start"/>
+                <circle cx="520" cy="300" r="18" class="end"/>
+                <path d="m235 801 24-2-14 20z" class="arrow"/>
+                <path d="m420 896 22 10-19 14z" class="arrow"/>
+                <path d="m195 608 19-12-2 23z" class="arrow"/>
+                <path d="m290 357 23 8-18 16z" class="arrow"/>
+              </svg>
+
+              <div class="map-chip top-left">Løb</div>
+              <div class="map-chip top-right">Kort ▾</div>
+
+              <div class="activity-card">
+                <div>
+                  <span class="activity-label">Tune · 7. sep. 2026</span>
+                  <strong>10,21 km</strong>
+                </div>
+                <div class="activity-stats">
+                  <span><b>52:14</b><small>Tid</small></span>
+                  <span><b>5:07</b><small>Tempo</small></span>
+                  <span><b>74 m</b><small>Højdemeter</small></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <p class="eyebrow">Funktioner</p>
+        <h2>Bygget til hurtigt overblik over mange aktiviteter</h2>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="icon">⌖</span>
+            <h3>Alle ruter på samme kort</h3>
+            <p>Se dine importerede aktiviteter samlet og navigér frit med zoom og panorering.</p>
+          </article>
+          <article class="feature">
+            <span class="icon">↗</span>
+            <h3>Tydelig valgt rute</h3>
+            <p>Den valgte aktivitet fremhæves, så den hurtigt kan skelnes fra de øvrige ruter.</p>
+          </article>
+          <article class="feature">
+            <span class="icon">↔</span>
+            <h3>Retning, start og slut</h3>
+            <p>Retningspile og markering af start/slut gør rutens forløb lettere at aflæse.</p>
+          </article>
+          <article class="feature">
+            <span class="icon">▦</span>
+            <h3>Aktivitetsliste</h3>
+            <p>Sorter og gennemgå aktiviteter med bl.a. Garmin-navn, distance, tid, tempo og højdemeter.</p>
+          </article>
+          <article class="feature">
+            <span class="icon">◐</span>
+            <h3>Kort og satellit</h3>
+            <p>Skift mellem almindelig kortvisning og satellitvisning efter behov.</p>
+          </article>
+          <article class="feature">
+            <span class="icon">⇩</span>
+            <h3>Bulk-import</h3>
+            <p>Importér GPS-aktiviteter og Wellness FIT-data fra hele Garmin-eksportens ZIP-fil.</p>
+          </article>
+          <article class="feature">
+            <span class="icon">#</span>
+            <h3>Daglige skridt</h3>
+            <p>Se personligt mål, målopfyldelse, gennemsnit, median, graf og dage under målet.</p>
+          </article>
+          <article class="feature feature-new">
+            <span class="feature-label">Ny i 2.0</span>
+            <span class="icon">♡</span>
+            <h3>Personlig VO₂max-analyse</h3>
+            <p>Undersøg sammenhænge mellem dine løbeminutter, puls, løbewatt og Garmins VO₂max-estimat.</p>
+          </article>
+          <article class="feature feature-new">
+            <span class="feature-label">Ny i 2.0</span>
+            <span class="icon">≋</span>
+            <h3>To anbefalingsspor</h3>
+            <p>Adskil observationer fra dine egne data fra generelle forslag baseret på forskning.</p>
+          </article>
+          <article class="feature feature-new">
+            <span class="feature-label">Ny i 2.0</span>
+            <span class="icon">⌕</span>
+            <h3>Zoom i træningshistorikken</h3>
+            <p>Brug fingrene, vælg år og datoer, og se træningsugerne med den nyeste først.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section-alt training-section" id="training">
+      <div class="wrap">
+        <p class="eyebrow">Hovednyhed i version 2.0</p>
+        <h2>Udforsk, hvad der påvirker din VO₂max</h2>
+        <p class="section-intro">
+          Garmin Route Atlas kan nu sammenholde din løbetræning med VO₂max, puls og løbewatt.
+          Appen hjælper dig med at undersøge muligheder – uden at love en individuel effekt.
+        </p>
+        <div class="training-layout">
+          <div class="training-copy">
+            <div class="training-item"><span class="training-num">01</span>
+              <div><h3>Personlig anbefaling ud fra dine data</h3>
+              <p>Se hvad din dokumenterede træning, restitution og puls ved sammenlignelig løbewatt peger på.
+                Når data er usikre, får du en forsigtig forklaring frem for en skråsikker prognose.</p></div></div>
+            <div class="training-item"><span class="training-num">02</span>
+              <div><h3>Et særskilt forslag fra forskningen</h3>
+              <p>Læs generelle principper fra videnskabelige undersøgelser. De præsenteres tydeligt adskilt
+                fra din personlige Garmin-analyse.</p></div></div>
+            <div class="training-item"><span class="training-num">03</span>
+              <div><h3>Zoom i hele perioden</h3>
+              <p>Zoom med to fingre, træk grafen, vælg et år eller præcise datoer, og tryk for at se en uges tal.
+                Begge akser viser skala og måleenheder.</p></div></div>
+            <div class="training-item"><span class="training-num">04</span>
+              <div><h3>Nyeste træningsuger først</h3>
+              <p>Træningsugerne sorteres fra nyeste til ældste, mens beregninger og historiske data bevares.</p></div></div>
+            <a class="btn btn-secondary" href="releases/2.0.html">Læs alle nyhederne i version 2.0</a>
+          </div>
+          <div class="training-preview" aria-label="Illustration af den nye træningsgraf">
+            <div class="preview-topline"><span class="preview-dot" aria-hidden="true"></span><strong>Træningsudvikling</strong><span class="preview-caption">Illustration</span></div>
+            <div class="preview-legend"><span class="legend-min">Løbeminutter · venstre</span><span class="legend-vo2">VO₂max · højre</span></div>
+            <svg viewBox="0 0 480 315" role="img" aria-label="Illustration af graf med to nummererede y-akser og tydelige ændringer over et år. Illustrationsdata, ikke en brugers målinger.">
+              <g stroke="#39506a" stroke-width="1"><path d="M44 32 H430 M44 90 H430 M44 148 H430 M44 206 H430 M44 264 H430"/></g>
+              <g fill="#b3cbe0" font-size="14" font-family="system-ui,sans-serif">
+                <text x="2" y="37">240</text><text x="13" y="95">180</text><text x="13" y="153">120</text><text x="22" y="211">60</text><text x="30" y="269">0</text>
+                <text x="443" y="37">50</text><text x="443" y="95">47,5</text><text x="443" y="153">45</text><text x="443" y="211">42,5</text><text x="443" y="269">40</text>
+                <text x="44" y="298">Jan.</text><text x="210" y="298">Jun.</text><text x="394" y="298">Dec.</text>
+              </g>
+              <polyline fill="none" stroke="#66c3ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+                points="46,204 79,196 112,184 145,191 178,160 211,172 244,128 277,139 310,118 343,146 376,131 409,113"/>
+              <polyline fill="none" stroke="#f3a46b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+                points="46,167 79,167 112,145 145,145 178,123 211,123 244,123 277,145 310,125 343,123 376,99 409,100"/>
+            </svg>
+            <div class="preview-controls" aria-hidden="true"><span>Zoom +</span><span>Zoom −</span><span>Vælg år</span><span>Vis hele</span></div>
+            <p class="preview-disclaimer">Illustration, ikke personlige Garmin-målinger.</p>
+          </div>
+        </div>
+        <div class="training-note"><strong>Data og forbehold:</strong> Garmin-eksporten behandles lokalt. VO₂max er et Garmin-estimat, og statistiske sammenhænge beviser ikke årsager til ændret kondition.</div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="steps">
+      <div class="wrap narrow">
+        <p class="eyebrow">Skridt</p>
+        <h2>Personligt skridtmål baseret på din historik</h2>
+        <p>
+          Appen læser daglige skridt fra Wellness FIT-filer i en komplet Garmin Account Data Export.
+          Gang og løb samles til ét dagstal, som gemmes lokalt på telefonen.
+        </p>
+
+        <ol class="steps">
+          <li>
+            <span>1</span>
+            <div><strong>Importér hele ZIP-filen</strong><p>Brug den komplette Garmin-eksport – ikke CSV-oversigten – og pak den ikke ud.</p></div>
+          </li>
+          <li>
+            <span>2</span>
+            <div><strong>Kontrollér importen</strong><p>Afslutningsbeskeden viser, hvor mange dage med skridtdata der blev fundet.</p></div>
+          </li>
+          <li>
+            <span>3</span>
+            <div><strong>Åbn Skridt</strong><p>Vælg ⋮ → Skridt for at se mål, nøgletal, graf og dage under målet.</p></div>
+          </li>
+          <li>
+            <span>4</span>
+            <div><strong>Tilpas analysen</strong><p>Vælg 30 dage, 90 dage, ét år eller alle data og en dækningsgrad fra 80 til 100 procent.</p></div>
+          </li>
+        </ol>
+
+        <div class="notice">
+          <strong>Ingen skridtdata?</strong>
+          <p>
+            Importér den samme komplette ZIP igen efter opdatering af appen. Eksisterende aktiviteter
+            oprettes ikke igen. Viser afslutningsbeskeden 0 dage med skridtdata, indeholdt eksporten
+            ingen understøttede gang- eller løbeskridt. Dags dato, nulværdier og ugyldige datoer
+            udelades fra analysen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="screens">
+      <div class="wrap">
+        <p class="eyebrow">Visning</p>
+        <h2>Enkel navigation mellem kort og aktiviteter</h2>
+
+        <div class="screen-grid screen-grid-real">
+          <figure class="screen-card real-shot">
+            <img class="screen-image" src="assets/screenshots/overview-map.jpg" alt="Garmin Route Atlas med samlet kortoversigt over aktiviteter.">
+            <figcaption>
+              <strong>Kortoversigt</strong>
+              <span>Samlet geografisk overblik over 775 aktiviteter på kortet.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card real-shot">
+            <img class="screen-image" src="assets/screenshots/satellite-map.jpg" alt="Garmin Route Atlas i satellitvisning med rute fremhævet.">
+            <figcaption>
+              <strong>Satellitvisning</strong>
+              <span>Skift mellem kort og satellit for at se ruterne i deres geografiske kontekst.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card real-shot">
+            <img class="screen-image" src="assets/screenshots/selected-activity.jpg" alt="Valgt aktivitet på kortet med rød rute og infoboks.">
+            <figcaption>
+              <strong>Valgt aktivitet</strong>
+              <span>Den valgte rute fremhæves med detaljer om distance, tid, tempo, højdemeter og puls.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card real-shot">
+            <img class="screen-image" src="assets/screenshots/activity-filter.jpg" alt="Dialog til valg af aktivitetstyper i Garmin Route Atlas.">
+            <figcaption>
+              <strong>Filtrering på aktivitetstype</strong>
+              <span>Vælg præcis hvilke aktivitetstyper der skal vises på kortet.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card real-shot">
+            <img class="screen-image" src="assets/screenshots/activity-list.jpg" alt="Aktivitetslisten i Garmin Route Atlas med søgning og tabel.">
+            <figcaption>
+              <strong>Aktivitetsliste</strong>
+              <span>Søg og sorter aktiviteter efter dato, starttid og automatisk genereret navn.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="screens-note">
+          Screenshots viser den aktuelle Android-app med kortoversigt, satellitvisning, valgt aktivitet, filtre og aktivitetsliste.
+        </p>
+      </div>
+    </section>
+
+    <section class="section download-section" id="download">
+      <div class="wrap download-box">
+        <div>
+          <p class="eyebrow">Download</p>
+          <h2>Garmin Route Atlas til Android</h2>
+          <p class="download-copy">
+            Download APK-filen direkte herfra. Android vil normalt bede dig godkende installation
+            fra denne kilde første gang.
+          </p>
+
+          <dl class="release-meta">
+            <div><dt>Version</dt><dd data-version>Build</dd></div>
+            <div><dt>Udgivet</dt><dd data-date>Opdateret</dd></div>
+            <div><dt>Fil</dt><dd data-filename>GarminRouteAtlas.apk</dd></div>
+            <div><dt>SHA-256</dt><dd data-sha>Tilføjes ved release</dd></div>
+          </dl>
+        </div>
+
+        <div class="download-cta">
+          <a class="btn btn-primary btn-large" id="main-download" href="#download" aria-disabled="true">
+            Download APK
+          </a>
+          <p>Android · APK</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="wrap narrow">
+        <p class="eyebrow">Installation</p>
+        <h2>Sådan installerer du APK-filen</h2>
+
+        <ol class="steps">
+          <li>
+            <span>1</span>
+            <div><strong>Download APK</strong><p>Tryk på downloadknappen ovenfor på din Android-enhed.</p></div>
+          </li>
+          <li>
+            <span>2</span>
+            <div><strong>Åbn filen</strong><p>Åbn den downloadede APK-fil fra browseren eller appen Filer.</p></div>
+          </li>
+          <li>
+            <span>3</span>
+            <div><strong>Tillad installation</strong><p>Hvis Android spørger, tillad installation fra den aktuelle kilde.</p></div>
+          </li>
+          <li>
+            <span>4</span>
+            <div><strong>Installér og åbn</strong><p>Gennemfør installationen og start Garmin Route Atlas.</p></div>
+          </li>
+        </ol>
+
+        <div class="notice">
+          <strong>Sikkerhed</strong>
+          <p>
+            Installér kun APK-filer, du har tillid til. På denne side kan en SHA-256 checksum
+            offentliggøres sammen med hver release, så filen kan verificeres.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="changelog">
+      <div class="wrap narrow">
+        <p class="eyebrow">Versioner</p>
+        <h2>Release notes</h2>
+
+        <div class="changelog">
+          <article>
+            <div class="change-head"><strong>Garmin Route Atlas 2.0</strong><time datetime="2026-10-18">18. oktober 2026</time></div>
+            <p>En ny hovedversion med træningsanalyse og bedre adgang til mange års løbehistorik.</p>
+            <ul>
+              <li>VO₂max-analyse med personlig og særskilt forskningsbaseret anbefaling.</li>
+              <li>Historiske sammenligninger af løbemængde, puls, watt og VO₂max, når data findes.</li>
+              <li>Interaktive grafer med fingerzoom, panorering og valg af år eller datointerval.</li>
+              <li>Synlige akser og retvisende skalaer uden overdrevent store VO₂max-udsving.</li>
+              <li>Træningsuger vises med nyeste først.</li>
+              <li>Forenklet forklaring af datakvalitet og utilstrækkeligt sammenligningsgrundlag.</li>
+            </ul>
+            <p><a class="release-more" href="releases/2.0.html">Læs hele release-noten for 2.0 →</a></p>
+          </article>
+          <article class="older-release">
+            <div class="change-head"><strong>Version 1.x – kort og skridt</strong></div>
+            <ul>
+              <li>Samlet GPS-rutekort, satellitvisning, aktivitetsdetaljer og filtrering.</li>
+              <li>Daglige skridt fra Garmin Wellness FIT og personligt skridtmål.</li>
+              <li>Import af Garmin ZIP, højdemeter og hurtigere kortvisning.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap narrow faq">
+        <p class="eyebrow">Om projektet</p>
+        <h2>Data og ansvar</h2>
+        <p>
+          Garmin Route Atlas er udviklet som et selvstændigt værktøj til visualisering af importerede
+          aktivitetsruter, daglige skridt og Garmin-baseret træningsanalyse. Projektet er ikke tilknyttet Garmin Ltd.
+          eller dets datterselskaber.
+        </p>
+        <p>
+          Siden gemmer ikke i sig selv Garmin-login eller Garmin-adgangsoplysninger.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Garmin Route Atlas</strong>
+        <p>Et projekt på hoeyer.org</p>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Til toppen</a>
+        <a href="#download">Download</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
